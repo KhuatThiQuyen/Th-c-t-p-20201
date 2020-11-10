@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Phân tích CSDL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Anh Pham" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+
+        }
+
+        /* Định dạng header */
+        .header {
+            background-color: #00CC00;
+            color: #58257b;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Định dạng thanh điều hướng trên cùng */
+        .topnav {
+            overflow: hidden;
+            background-color: #58257b;
+        }
+
+        /* Định dạng link điều hướng */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Thay đổi màu liên kết khi di chuột qua */
+        .topnav a:hover {
+            background-color: #FF9966;
+            color: white;
+            font-weight: bold
+        }
+
+        /* Tạo ba cột không bằng nhau, float cạnh nhau */
+        .column {
+            float: left;
+            padding: 10px;
+        }
+
+        /* Cột bên trái và phải */
+        .column.side {
+            width: 25%;
+        }
+
+        /* Cột chính giữa */
+        .column.middle {
+            width: 50%;
+        }
+
+        /* Clear float khác sau các cột */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Bố cục linh hoạt: ba cột xếp chồng lên nhau thay vì cạnh nhau khi màn hình
+        có chiều rộng dưới 600px */
+        @media screen and (max-width: 600px) {
+            .column.side, .column.middle {
+                width: 100%;
+            }
+        }
+
+        /* Định dạng footer */
+        .footer {
+            background-color: #FFFFFF;
+            color: #58257b;
+            padding: 5px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Biểu đồ tròn</h1>
+</div>
+
+<div class="topnav">
+    <a href="BDTron.html">Biểu đồ tròn</a>
+    <a href="BDC.html">Biểu đồ Cột</a>
+    <a href="BDThanh.html">Biểu đồ Thanh</a>
+    <a href="BDM.html">Biểu đồ Đường</a>
+
+</div>
+
+<div class="header">
+    <h1></h1>
+</div>
+<div class="row">
+    <div class="column side">
+        <h2>Biểu đồ</h2>
+        <p>
+            <html>
+            <head>
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Quoc gia', 'So sang che'],
+        ['CN',     324],
+        ['US',      142],
+        ['JP',  69],
+        ['WO ', 60],
+        ['EP',    36],
+        ['IN',  23],
+        ['AU',  19],
+        ['RU',  16],
+        ['CA',  14],
+        ['GB',  13]
+      ]);
+
+        var options = {
+          title: ''
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+            </head>
+            <body>
+            <div id="piechart" style="width: 900px; height: 500px;"></div>
+            </body>
+            </html>
+
+        </p>
+    </div>
+
+
+        </p>
+    </div>
+
+    <div class="column middle">
+        <h2></h2>
+    </div>
+
+    <div class="column side">
+        <h2>Danh sách</h2>
+</html>
+
+</p>
+</div>
+
+<div class="column middle">
+    <h2>Số lượng sáng chế của từng Quốc gia</h2>
+
+</div>
+
+<div class="column side">
+
+    <p>
+        <table border="1">
+        <tr>
+          <th>STT</th>
+          <th>Tên quốc gia</th>
+          <th>Số sáng chế</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>CN</td>
+          <td>324</td>
+        </tr>
+      <tr>
+        <td>2</td>
+        <td>US</td>
+        <td>142</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>JP</td>
+        <td>69</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>WO</td>
+        <td>60</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>EP</td>
+        <td>36</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>IN</td>
+        <td>23</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>AU</td>
+        <td>19</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>RU</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>CA</td>
+        <td>14</td>
+      <tr>
+        <td>10</td>
+        <td>GB</td>
+        <td>13</td>
+      <tr>
+        <td>11</td>
+        <td>SG</td>
+        <td>11</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>FR</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>KR</td>
+        <td>8</td>
+      <tr>
+        <td>14</td>
+        <td>BR</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>UA</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>DE</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>VN</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>NL</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>IE</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>ID</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td>GC</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td>DD</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td>AT</td>
+        <td>1</td>
+      </tr>
+      </tr>
+      </tr>
+      </tr>
+    
+      </table>
+      </p>
+</div>
+</div>
+</body>
+</html>

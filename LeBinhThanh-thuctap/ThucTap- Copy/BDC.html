@@ -1,0 +1,226 @@
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript" src="LoadBieuDo.js"></script>
+
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Viet Nam\n\
+          VN1010", "Density", { role: "style" } ],
+        ["CN\n\
+          ", 324, "#b87333"],
+        ["US\n\
+          ", 142, "#b87333"],
+        ["JP\n\
+          ", 69, "b87333"],
+        ["WO\n\
+          ", 60, "b87333"],
+        ["EP\n\
+          ", 36, "b87333"],
+        ["IN\n\
+          ", 23, "b87333"],
+        ["AU\n\
+          ", 19, "b87333"],
+        ["RU\n\
+          ", 16, "b87333"],
+        ["CA\n\
+          ", 14, "b87333"],
+        ["GB\n\
+          ", 13, "b87333"],
+
+
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+
+      var options = {
+        title: "So sang che cua quoc gia",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+    function displayBieuDoCay() {
+      var element1 = document.getElementById("bieudocay");
+      element1.style.display = 'block' ;
+      var element2 = document.getElementById("columnchart_values");
+      element2.style.display= 'none';
+
+    }
+    function displayBieuDoBongBong() {
+      var element1 = document.getElementById("bieudobongbong");
+      element1.style.display = 'block' ;
+      var element2 = document.getElementById("columnchart_values");
+      element2.style.display= 'none';
+
+    }
+    function displayBieuDoRadar() {
+      var element1 = document.getElementById("bieudoradar");
+      element1.style.display = 'block' ;
+      var element2 = document.getElementById("columnchart_values");
+      element2.style.display= 'none';
+
+    }
+
+    function displayBieuDoCot() {
+      var element1 = document.getElementById("columnchart_values");
+      element1.style.display= 'block';
+      var element2 = document.getElementById("bieudocay");
+      element2.style.display = 'none' ;
+      var element3 = document.getElementById("bieudobongbong");
+      element3.style.display = 'none' ;
+      var element4 = document.getElementById("bieudoradar");
+      element4.style.display = 'none' ;
+
+    }
+
+
+  </script>
+<div id="columnchart_values" style="width: 600px; height: 400px;"></div>
+
+<div > <iframe id="bieudocay" src="BieuDoCay.html" height="500" width="900"></iframe> </div>
+<div > <iframe id="bieudobongbong" src="BieuDoBongBong.html" height="500" width="900"></iframe> </div>
+<div > <iframe id="bieudoradar" src="BieuDoRadar.html" height="500" width="900"></iframe> </div>
+
+
+<script>displayBieuDoCot()</script>
+<div>
+  <p>
+    <table border="1">
+    <tr>
+      <th>STT</th>
+      <th>Ten quoc gia</th>
+      <th>So sang che</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>CN</td>
+      <td>324</td>
+    </tr>
+  <tr>
+    <td>2</td>
+    <td>US</td>
+    <td>142</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>JP</td>
+    <td>69</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>WO</td>
+    <td>60</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>EP</td>
+    <td>36</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>IN</td>
+    <td>23</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>AU</td>
+    <td>19</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>RU</td>
+    <td>16</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>CA</td>
+    <td>14</td>
+  <tr>
+    <td>10</td>
+    <td>GB</td>
+    <td>13</td>
+  <tr>
+    <td>11</td>
+    <td>SG</td>
+    <td>11</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>FR</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>KR</td>
+    <td>8</td>
+  <tr>
+    <td>14</td>
+    <td>BR</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>UA</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>DE</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>VN</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>NL</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td>IE</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>ID</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>GC</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td>DD</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>23</td>
+    <td>AT</td>
+    <td>1</td>
+  </tr>
+  </tr>
+  </tr>
+  </tr>
+
+  </table>
+  </p>
+
+</div>

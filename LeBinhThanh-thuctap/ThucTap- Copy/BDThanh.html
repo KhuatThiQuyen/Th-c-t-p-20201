@@ -1,0 +1,181 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['bar']});
+    google.charts.setOnLoadCallback(drawStuff);
+
+    function drawStuff() {
+      var data = new google.visualization.arrayToDataTable([
+        ['Cac quoc gia', 'So sang che'],
+        ["CN", 324],
+        ["US", 142],
+        ["JP", 69],
+        ["WO", 60],
+        ['EP', 36],
+        ['IN', 23],
+        ['AU', 19],
+        ['RU', 16],
+        ['CA', 14],
+        ['GB', 13]
+      ]);
+
+      var options = {
+        title: 'So sang che tren cac quoc gia',
+        width: 900,
+        legend: { position: 'none' },
+        chart: { title: 'Bieu do thanh ngan xep hang cac quoc gia',
+          subtitle: 'dua tren so sang che cua quoc gia ay' },
+        bars: 'horizontal', // Required for Material Bar Charts.
+        axes: {
+          x: {
+            0: { side: 'top', label: 'Percentage'} // Top x-axis.
+          }
+        },
+        bar: { groupWidth: "90%" }
+      };
+
+      var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+      chart.draw(data, options);
+    };
+  </script>
+</head>
+<body>
+<div id="top_x_div" style="width: 900px; height: 500px;"></div>
+
+<div class="column middle">
+  <h2>Số lượng sáng chế của từng Quốc gia</h2>
+
+</div>
+
+<div class="column side">
+
+  <p>
+      <table border="1">
+      <tr>
+        <th>STT</th>
+        <th>Tên quốc gia</th>
+        <th>Số sáng chế</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>CN</td>
+        <td>324</td>
+      </tr>
+    <tr>
+      <td>2</td>
+      <td>US</td>
+      <td>142</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>JP</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>WO</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>EP</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>IN</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>AU</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>RU</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>CA</td>
+      <td>14</td>
+    <tr>
+      <td>10</td>
+      <td>GB</td>
+      <td>13</td>
+    <tr>
+      <td>11</td>
+      <td>SG</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>FR</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>KR</td>
+      <td>8</td>
+    <tr>
+      <td>14</td>
+      <td>BR</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>UA</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>DE</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>VN</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>NL</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>IE</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>ID</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>GC</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>DD</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>AT</td>
+      <td>1</td>
+    </tr>
+    </tr>
+    </tr>
+    </tr>
+  
+    </table>
+    </p>
+</div>
+</div>
+</body>
+</html>
