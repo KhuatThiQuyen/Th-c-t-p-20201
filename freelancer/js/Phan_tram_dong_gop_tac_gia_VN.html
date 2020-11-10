@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/alasql"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.12/xlsx.core.min.js"></script>
+
+  </head>
+  <script>
+    loadFile = function(event) {
+	alasql('SELECT * FROM FILE(?,{headers:true})',[event],function(data){
+		print(data)
+	});
+}
+  </script>
+  <body>
+    <input id="readfile" type="file" onchange="loadFile(event)"/>
+<xmp id="output"></xmp>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    <script>
+      print('AlaSQL v'+alasql.version)
+print('Please upload txt, json, csv, tsv, tab, xlsx, xls or html file to see the content')
+
+loadFile = function(event) {
+	alasql('SELECT * FROM FILE(?,{headers:true})',[event],function(data){
+		print(data)
+	});
+}
+function randomArray(length, sophantu) {
+      var nums = [],
+        ranNums = [],
+        i = 0,
+        j = 0;
+        console.log(i);
+      for (i=0;i<length;i++) {
+        nums.push(i);
+      }
+      for (i=0;i<10;i++) {
+        j = Math.floor(Math.random() * (length + 1));
+        ranNums.push(nums[j]);
+        nums.splice(j, 1);
+      }
+      return ranNums;
+    }
+function print(x){
+  google.charts.load('current', {'packages':['corechart']});
+  
+    // document.getElementById('output').textContent += JSON.stringify(x,  null, '\t')+"\n";
+    console.log(x);
+    var rs = [['Task', 'Phan tram dong gop cua tung tac gia VN']];
+    ranNums = randomArray(x.length, 10);
+    for (i=0;i<10;i++) {
+        var row = [];
+        row.push(x[ranNums[i]]["A"]);
+        row.push(parseInt(x[ranNums[i]][0]));
+        rs.push(row);
+      }
+    console.log(rs);
+    var data = google.visualization.arrayToDataTable(rs);
+
+    var options = {
+      title: 'Phan tram dong gop cua tung tac gia VN'
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+    chart.draw(data, options);
+}
+    </script>
+
+<!-- 
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var out = document.getElementById('output').textContent;
+    console.log(out);
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Phan tram dong gop cua tung tac gia VN'],
+      ['Nam',     11],
+      ['Bac',      5],
+      ['Dong',  4],
+      ['Tay', 4],
+      ['Nux',    7]
+    ]);
+
+    var options = {
+      title: 'Phần trăm đóng góp của từng tác giả '
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+    chart.draw(data, options);
+  }
+</script> -->
+  </body>
+</html>

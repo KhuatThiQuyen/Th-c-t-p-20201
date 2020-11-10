@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Biểu đồ thanh</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+
+        }
+
+        /* Định dạng header */
+        .header {
+            background-color: #e9d8f4;
+            color: #58257b;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Định dạng thanh điều hướng trên cùng */
+        .topnav {
+            overflow: hidden;
+            background-color: #58257b;
+        }
+
+        /* Định dạng link điều hướng */
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Thay đổi màu liên kết khi di chuột qua */
+        .topnav a:hover {
+            background-color: #db7093;
+            color: white;
+            font-weight: bold
+        }
+
+        /* Tạo ba cột không bằng nhau, float cạnh nhau */
+        .column {
+            float: left;
+            padding: 10px;
+        }
+
+        /* Cột bên trái và phải */
+        .column.side {
+            width: 25%;
+        }
+
+        /* Cột chính giữa */
+        .column.middle {
+            width: 50%;
+        }
+
+        /* Clear float khác sau các cột */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Bố cục linh hoạt: ba cột xếp chồng lên nhau thay vì cạnh nhau khi màn hình
+        có chiều rộng dưới 600px */
+        @media screen and (max-width: 600px) {
+            .column.side, .column.middle {
+                width: 100%;
+            }
+        }
+
+        /* Định dạng footer */
+        .footer {
+            background-color: #e9d8f4;
+            color: #58257b;
+            padding: 5px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="header">
+  <h1></h1>
+</div>
+<div class="row">
+  <div class="column side">
+    <h2>Biểu đồ</h2>
+    <p>
+      <html>
+      <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+                    google.charts.load('current', {'packages':['bar']});
+                    google.charts.setOnLoadCallback(drawStuff);
+
+                    function drawStuff() {
+                        var data = new google.visualization.arrayToDataTable([
+                            ['Ten tac gia', 'So luong sang che cua tung tac gia'],
+                            [" Robert Edison | Zhu", 15],
+                            ["AL-GHAMDI", 13],
+                            ["Tsai", 12],
+                            [" Sami", 12],
+                            [" Bader | AL OSAIMI", 11],
+                            [" Naif | BARNAWI", 11],
+                            [" Xin X. | Ngo", 10],
+                            [" Tokhanh | Yanez", 10],
+                            [" KAORU | ASAMI", 10],
+                            [' Neeraj', 9]
+                        ]);
+
+                        var options = {
+                            title: 'So luong sang che cua tung tac gia',
+                            width: 900,
+                            legend: { position: 'none' },
+                            chart: { title: '',
+                                subtitle: '' },
+                            bars: 'horizontal', // Required for Material Bar Charts.
+                            axes: {
+                                x: {
+                                    0: { side: 'top', label: ''} // Top x-axis.
+                                }
+                            },
+                            bar: { groupWidth: "90%" }
+                        };
+
+                        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+                        chart.draw(data, options);
+                    };
+                </script>
+      </head>
+      <body>
+      <div id="top_x_div" style="width: 900px; height: 500px;"></div>
+      </body>
+      </html>
+
+    </p>
+  </div>
+
+  <div class="column middle">
+    <h2>Số lượng sáng chế của từng tác giả</h2>
+
+  </div>
+
+  <div class="column side">
+
+    <p>
+    <table border="1">
+      <tr>
+        <th>Tên tác giả</th>
+        <th>Số sáng chế</th>
+      </tr>
+      <tr>
+        <td> Robert Edison | Zhu</td>
+        <td>15</td>
+
+      </tr>
+      <tr>
+        <td>AL-GHAMDI</td>
+        <td>13</td>
+
+      </tr>
+      <tr>
+        <td>Tsai</td>
+        <td>12</td>
+
+      </tr>
+      <tr>
+        <td>Sami</td>
+        <td>12</td>
+
+      </tr>
+      <tr>
+        <td> Bader | AL OSAIMI</td>
+        <td>11</td>
+
+      </tr>
+      <tr>
+        <td> Naif | BARNAWI</td>
+        <td>11</td>
+
+      </tr>
+      <tr>
+        <td> Xin X. | Ngo</td>
+        <td>10</td>
+
+      </tr>
+      <tr>
+        <td> Tokhanh | Yanez</td>
+        <td>10</td>
+
+      </tr>
+      <tr>
+        <td> KAORU | ASAMI</td>
+        <td>10</td>
+
+      </tr>
+      <tr>
+        <td> Neeraj</td>
+        <td>9</td>
+
+      </tr>
+    </table>
+    </p>
+  </div>
+</div>
+</body>
+</html>
